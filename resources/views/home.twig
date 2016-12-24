@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Twig Extensions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+    .container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #d0d0d0;
+        margin-bottom: 30px;
+    }
+    table td, table th {
+        padding: 5px 8px 6px;
+    }
+    table th {
+        text-align: left;
+        background: #d0d0d0;
+    }
+    h2 code {
+        color: #99cc99;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Twig Extension Tests</h1>
+        <p>The following are all the available twig extension functions and filters</p>
+
+        <h2>Defaults that are added by <code>Slim\Views\TwigExtension</code></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>path_for('home')</code></td>
+                    <td>{{path_for('home')}}</td>
+                </tr>
+                <tr>
+                    <td><code>base_url()</code></td>
+                    <td>{{ base_url() }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Functions added by <code>App\Twig\Extensions\Assets</code></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>get_image('logo.png')</code></td>
+                    <td>{{ get_image('logo.png') }}</td>
+                </tr>
+                <tr>
+                    <td><code>get_script('app.js')</code></td>
+                    <td>{{ get_script('app.js') }}</td>
+                </tr>
+                <tr>
+                    <td><code>get_stylesheet('app.css')</code></td>
+                    <td>{{ get_stylesheet('app.css') }}</td>
+                </tr>
+                <tr>
+                    <td><code>get_vendor_script('jquery.js')</code></td>
+                    <td>{{ get_vendor_script('juqery.js') }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Functions added by <code>App\Twig\Extensions\FormHelpers</code></h2>
+        <p>
+            These mimic WordPress' checked and selected helpers.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>checked(1, 1)</code></td>
+                    <td>{{ checked(1, 1) }}</td>
+                </tr>
+                <tr>
+                    <td><code>selected(1, 1)</code></td>
+                    <td>{{ selected(1, 1) }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Functions added by <code>App\Twig\Extensions\Urls</code></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>site_url()</code></td>
+                    <td>{{ site_url() }}</td>
+                </tr>
+                <tr>
+                    <td><code>site_url('/users')</code></td>
+                    <td>{{ site_url('users') }}</td>
+                </tr>
+                <tr>
+                    <td><code>current_url()</code></td>
+                    <td>{{ current_url() }}</td>
+                </tr>
+                <tr>
+                    <td><code>current_path()</code></td>
+                    <td>{{ current_path() }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
